@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@keyframes enterSwingRight {
+    0%   { transform: translateX(-100%) rotate(-25deg); opacity: 0; }
+    60%  { transform: translateX(10%) rotate(10deg);    opacity: 1; }
+    80%  { transform: translateX(-5%) rotate(-6deg); }
+    100% { transform: translateX(0) rotate(0); }
+  }
+  @keyframes enterSwingLeft {
+    0%   { transform: translateX(100%) rotate(25deg);  opacity: 0; }
+    60%  { transform: translateX(-10%) rotate(-10deg); opacity: 1; }
+    80%  { transform: translateX(5%) rotate(6deg); }
+    100% { transform: translateX(0) rotate(0); }
+  }
+  .swing-right-in { animation: enterSwingRight 1.5s cubic-bezier(.2,.9,.3,1) both; transform-origin: left; }
+  .swing-left-in  { animation: enterSwingLeft  1.5s cubic-bezier(.2,.9,.3,1) both; transform-origin: right; }
+
+  @keyframes slideInLeft {
+    0%   { transform: translateX(-50px); opacity: 0; }
+    100% { transform: translateX(0);     opacity: 1; }
+  }
+  
+  .js {
+    animation: slideInLeft 0.6s ease forwards;
+    opacity: 0;}
+    .html {
+        animation: slideInLeft 1s ease forwards;
+        opacity: 0;}
+        .css {
+            animation: slideInLeft 2s ease forwards;
+            opacity: 0;}
+            .python {
+                animation: slideInLeft 3s ease forwards;
+                opacity: 0;}
+                .php {
+                    animation: slideInLeft 4s ease forwards;
+                    opacity: 0;}
+                    .db1 {
+                        animation: slideInLeft 5s ease forwards;
+                        opacity: 0;}
+                        .db2 {
+                            animation: slideInLeft 6s ease forwards;
+                            opacity: 0;}
