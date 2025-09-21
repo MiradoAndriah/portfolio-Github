@@ -40,3 +40,26 @@
                         .db2 {
                             animation: slideInLeft 6s ease forwards;
                             opacity: 0;}
+
+
+@keyframes float {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+.flotte {
+  animation: float 3s ease-in-out infinite;
+}
+
+
+@keyframes clinote {
+  0%   { opacity: 0.1; }
+  25% {opacity: 0.4;}
+  50%  { opacity: 0.2; }
+  75%{opacity: 0.4;}
+  100% { opacity: 0.1; }
+}
+.clinote {
+  animation: clinote 3s ease-in-out infinite;
+}
+

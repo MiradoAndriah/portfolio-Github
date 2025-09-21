@@ -1,16 +1,16 @@
 import React from 'react'
 import './bg.css';
-import pdp from '../assets/pdp.jpeg'
+import pdp from '../assets/pdp.jpg'
 import { Avatar,Card,CardContent,Typography,TextField,Button} from '@mui/material';
 import { SiTailwindcss } from 'react-icons/si';
 import { SiPython } from 'react-icons/si';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useForm } from "react-hook-form"
 import axios from 'axios';
 import toast from 'react-hot-toast';
 
-
 export default function Acceuil() {
+
   const [liked, setLiked] = useState(false);
   const {
     register,
@@ -55,7 +55,16 @@ export default function Acceuil() {
             entre technologie et énergie.</p>
         </div>
         <div className=' w-[300px] flex justify-center swing-left-in'>
-          <img src={pdp} alt="" className='w-[170px] rounded-full' />
+            <div className='relative w-55 h-55'>
+              <div className='absolute inset-0 bg-blue-300  rounded-full clinote'></div>
+              <div className='absolute left-4 top-2'>
+                <img src={pdp} alt="" className='w-34 h-38 rounded-full' />
+              </div>
+              <div className='absolute -right-5 bottom-0 bg-red-400 w-25 h-15 rounded-2xl justify-center items-center flex flotte'>
+                <span className='font-bold'>Dev Web</span>
+              </div>
+            </div>
+ 
         </div>
       </div>
 
@@ -100,14 +109,16 @@ export default function Acceuil() {
         <CardContent id='project'>
         <p className='bg-neutral-900 shadow w-15 p-1 ps-2 rounded text-xs mb-2 text-white'>project</p>
         <div className='flex items-center space-x-2 mt-4'>
-            <i class="fa fa-briefcase text-4xl" aria-hidden="true"></i>
+            <button className='cursor-pointer hover:rotate-60 me-4'
+            onClick={()=>window.location.href="https://portfolio-github-kohl.vercel.app/"}><i class="fas fa-link text-blue-500 text-2xl" aria-hidden="true"></i></button>
             <div className='gap-y-0'>
-              <span className='text-white opacity-70 font-bold '><a href="">Portfolio</a></span>
+              <span className='text-white opacity-70 font-bold '>Portfolio</span>
               <p className='text-xs text-white opacity-50'>developper avec react+Tailwind</p>
             </div>
         </div>
         <div className='flex items-center space-x-2 mt-4'>
-            <i class="fa fa-briefcase text-4xl" aria-hidden="true"></i>
+            <button className='cursor-pointer hover:rotate-60 me-4'
+            onClick={()=>window.location.href=""}><i class="fas fa-link text-gray-600 text-2xl" aria-hidden="true"></i></button> 
             <div className='gap-y-0'>
               <span className='text-white opacity-70 font-bold '><a href="">Vender Free</a></span>
               <p className='text-xs text-white opacity-50'>developper avec react+Tailwind+python</p>
@@ -124,17 +135,20 @@ export default function Acceuil() {
         <div className='card bg-neutral-900 rounded flex w-[215px] h-[40px] gap-4 items-center ps-3 me-5 hover:scale-110 text-white mt-3 text-xs'>
         <i class="fas fa-envelope #D14836 text-[#D14836]"></i>
         <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mirado0603@gmail.com">mirado0603@gmail.com</a></p>
-        <i class="fas fa-arrow-up rotate-45 text-xl"></i>
+        <button className='cursor-pointer' 
+        onClick={() => window.location.href = "https://mail.google.com/mail/?view=cm&fs=1&to=mirado0603@gmail.com"}> <i class="fas fa-arrow-up rotate-45 text-xl"></i></button>
         </div> 
         <div className='card bg-neutral-900 rounded flex w-[215px] h-[40px] gap-4 items-center ps-3 me-5 hover:scale-110 text-white mt-3'>
         <i class="fab fa-facebook-f text-blue-800"></i>
         <p><a className='text-xs' target="_blank"  rel="noopener noreferrer" href="https://www.facebook.com/miii.rakotoson.1?locale=fr_FR">Mi'e Andriah</a></p>
-        <i class="fas fa-arrow-up rotate-45 text-xl ml-auto mr-3"></i>
+        <button className='cursor-pointer ml-auto'
+        onClick={() => window.location.href ="https://www.facebook.com/miii.rakotoson.1?locale=fr_FR"}> <i class="fas fa-arrow-up rotate-45 text-xl  mr-3"></i></button>
         </div>
         <div className='card bg-neutral-900 rounded flex w-[215px] h-[40px] gap-4 items-center ps-3 me-5 hover:scale-110 text-white mt-3'>
         <i class="fab fa-linkedin-in text-[#0A66C2]"></i>
         <p><a className='text-xs' target="_blank"  rel="noopener noreferrer" href="https://linkedin.com/in/mirado-andriah-7ab856372">Mirado Andriah</a></p>
-        <i class="fas fa-arrow-up rotate-45 text-xl ml-auto mr-3"></i>
+        <button className='cursor-pointer ml-auto'
+        onClick={()=>window.location.href="https://linkedin.com/in/mirado-andriah-7ab856372"}><i class="fas fa-arrow-up rotate-45 text-xl mr-3"></i></button> 
         </div> 
       </div> 
           
@@ -169,37 +183,46 @@ export default function Acceuil() {
         <p className='bg-neutral-900 shadow w-17 p-1 rounded text-xs mb-2'>Contact</p>
         <h2 className='md:text-3xl text-1xl'>I love work with you.</h2>
       </div>
-      <div className='flex justify-center mt-5 mb-20 flex-col sm:flex-row'>
+      <div className='flex justify-center mt-5 mb-20 flex-col md:flex-row'>
         <div className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 md:ms-7 ms-2 hover:scale-110 '>
         <i class="fas fa-envelope"></i>
         <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mirado0603@gmail.com">mirado0603@gmail.com</a></p>
-        <i class="fas fa-arrow-up rotate-45 text-xs"></i>
+        <div className='cursor-pointer ml-auto me-3' 
+        onClick={() => window.location.href = "https://mail.google.com/mail/?view=cm&fs=1&to=mirado0603@gmail.com"}> <i class="fas fa-arrow-up rotate-45 text-xs"></i></div>
         </div> 
         <div className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 md:ms-0 ms-2 hover:scale-110 md:mt-0 mt-3'>
         <i class="fab fa-facebook-f"></i>
         <p><a target="_blank"  rel="noopener noreferrer" href="https://www.facebook.com/miii.rakotoson.1?locale=fr_FR">Mi'e Andriah</a></p>
-        <i class="fas fa-arrow-up rotate-45 text-xs ml-auto mr-3"></i>
+        <div className='cursor-pointer ml-auto'
+        onClick={() => window.location.href ="https://www.facebook.com/miii.rakotoson.1?locale=fr_FR"}> <i class="fas fa-arrow-up rotate-45 text-xs  mr-3"></i> </div>
         </div>
         <div className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 hover:scale-110 md:ms-0 ms-2 md:mt-0 mt-3'>
         <i class="fab fa-linkedin-in"></i>
         <p><a target="_blank"  rel="noopener noreferrer" href="https://linkedin.com/in/mirado-andriah-7ab856372">Mirado Andriah</a></p>
-        <i class="fas fa-arrow-up rotate-45 text-xs ml-auto mr-3"></i>
+        <button className='cursor-pointer ml-auto'
+        onClick={()=>window.location.href="https://linkedin.com/in/mirado-andriah-7ab856372"}> <i class="fas fa-arrow-up rotate-45 text-xs  mr-3"></i></button>
         </div> 
+        <div className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 hover:scale-110 md:ms-0 ms-2 md:mt-0 mt-3'>
+        <i class="fab fa-github"></i>
+        <p><a target="_blank"  rel="noopener noreferrer" href="https://github.com/MiradoAndriah">Mirado Andriah</a></p>
+        <button className='cursor-pointer ml-auto'
+        onClick={()=>window.location.href="https://github.com/MiradoAndriah"}> <i class="fas fa-arrow-up rotate-45 text-xs  mr-3"></i></button>
+        </div>
       </div> 
 
       <footer className='bg-neutral-900 w-full'>
-        <div className='flex justify-left xl:ms-65 ms-2 mt-5 flex-col sm:flex-row pb-5 pt-5 md:gap-x-50 sm:gap-10'>
+        <div className='flex justify-left xl:ms-65 ms-2 mt-5 flex-col sm:flex-row pb-5 pt-5 md:gap-x-30 xl:gap-x-50 sm:gap-10'>
           <div className='sm:mb-0 mb-5'>
             <p className='mb-2 text-2xl'>Contact</p>
             <p><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mirado0603@gmail.com" className='text-xs ms-3'> mirado0603@gmail.com</a></p>
-            <p><i class="fa-solid fa-phone fa-lg" aria-hidden="true"></i><a href="" className='text-sm ms-3'>+261 38 81 550 62</a></p>
+            <p className='mt-2'><i class="fa-solid fa-phone fa-lg" aria-hidden="true"></i><a href="" className='text-sm ms-3'>+261 38 81 550 62</a></p>
           </div>
 
           <div className='sm:mb-0 mb-5'> 
             <p className='text-2xl'>Navigation</p>
-            <ul className='text-sm'><li className='mt-2'><a href="#home">Home</a></li>
-            <li className='mt-2'><a href="#project">project</a></li>
-            <li className='mt-2'><a href="#skills">skills</a></li>
+            <ul className='text-sm flex flex-col gap-y-3'><li className='mt-2 fas fa-home'><a href="#home" className='ms-2 text-xs'>Home</a></li>
+            <li className='mt-2 fas fa-folder-open'><a href="#project" className='ms-2 text-xs'>project</a></li>
+            <li className='mt-2 fas fa-cogs'><a href="#skills" className='ms-2 text-xs'>skills</a></li>
             </ul>
           </div>
 
@@ -207,6 +230,8 @@ export default function Acceuil() {
           <p className='mb-2 text-2xl'>your advice</p>
           <form action="" onSubmit={handleSubmit(onSubmit)}>
             <div className='flex flex-col gap-y-2'>
+            <input type="text" id='name' placeholder='your name' className='h-10 ps-2 border-1 rounded w-50' required />
+              <input type="email" id='name' placeholder='your address' className='h-10 ps-2 border-1 rounded w-50' required/>
           <TextField
           id="outlined-multiline-static"
           label=""
