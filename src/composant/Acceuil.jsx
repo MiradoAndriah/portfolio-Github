@@ -8,6 +8,8 @@ import { useState, useEffect, useRef } from 'react';
 import { useForm } from "react-hook-form"
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import {motion} from 'motion/react'
+
 
 export default function Acceuil() {
 
@@ -46,14 +48,18 @@ export default function Acceuil() {
       
     
       <div className=' flex justify-center mb-20 flex-col sm:flex-row ' id='home'>
-        <div className=' md:w-[500px] md:ms-0 ms-10 md:mb-0 mb-10 w-[300px] max-w-full sm:w-[300px] python'>
+        <motion.div 
+        initial={{opacity:0}}
+        whileInView={{opacity:1}}
+        transition={{duration:2}}
+        className=' md:w-[500px] md:ms-0 ms-10 md:mb-0 mb-10 w-[300px] max-w-full sm:w-[300px] python'>
           <h2 className='text-3xl font-bold'>Mirado Andriah</h2>
           <h3 className='text-2xl'>Developper Fulstack</h3>
           <p>Je suis passionné par le <code className='card bg-neutral-900 rounded'>codage</code> et toujours curieux 
             d’apprendre de nouvelles choses. <code className='card bg-neutral-900 rounded'>Gamer</code> dans l’âme, 
             j’aime aussi pratiquer du <code  className='card bg-neutral-900 rounded'>sport</code> pour garder un bon équilibre 
             entre technologie et énergie.</p>
-        </div>
+        </motion.div>
         <div className=' w-[300px] flex justify-center swing-left-in'>
             <div className='relative w-55 h-55'>
               <div className='absolute inset-0 bg-blue-300  rounded-full clinote'></div>
@@ -73,34 +79,62 @@ export default function Acceuil() {
         <Card variant="outlined" sx={{ backgroundColor: '#1E1E1E' ,borderColor: '#000' }}>
         <CardContent>
           <p className='bg-neutral-900 shadow w-31 p-1 ps-2 rounded text-xs mb-2 text-white'>langage & database</p>
-            <div className='mt-5 flex items-center space-x-15 js'>
+            <motion.div 
+                    initial={{opacity:0}}
+                    whileInView={{opacity:1}}
+                    transition={{duration:2}}
+            className='mt-5 flex items-center space-x-15 js'>
               <i className="fa-brands fa-js text-yellow-400 sm:text-5xl text-3xl"></i>
               <span className='text-white opacity-50'>JavaScript</span>
-            </div>
-            <div className='mt-5 flex items-center space-x-17 html'>
+            </motion.div>
+            <motion.div 
+                    initial={{opacity:0}}
+                    whileInView={{opacity:1}}
+                    transition={{duration:2}}
+            className='mt-5 flex items-center space-x-17 html'>
               <i className="fa-brands fa-html5 text-orange-600 sm:text-5xl text-3xl"></i>
               <span className='text-white opacity-50'>HTML</span>
-            </div>
-            <div className='mt-5 flex items-center space-x-16 css'>
+            </motion.div>
+            <motion.div 
+                    initial={{opacity:0}}
+                    whileInView={{opacity:1}}
+                    transition={{duration:2}}
+            className='mt-5 flex items-center space-x-16 css'>
               <i className="fa-brands fa-css3-alt text-blue-600 sm:text-5xl text-3xl"></i>
               <span className='text-white opacity-50'>CSS</span>
-            </div>
-            <div className='mt-5 flex items-center space-x-14 python'>
+            </motion.div>
+            <motion.div
+                    initial={{opacity:0}}
+                    whileInView={{opacity:1}}
+                    transition={{duration:2}}
+            className='mt-5 flex items-center space-x-14 python'>
               <i className="fa-brands fa-python text-blue-400 sm:text-5xl text-3xl"></i>
               <span className='text-white opacity-50'>Python</span>
-            </div>
-            <div className='mt-5 flex items-center space-x-10 php'>
+            </motion.div>
+            <motion.div 
+                    initial={{opacity:0}}
+                    whileInView={{opacity:1}}
+                    transition={{duration:2}}
+            className='mt-5 flex items-center space-x-10 php'>
               <i className="fa-brands fa-php text-indigo-700 sm:text-5xl text-3xl"></i>
               <span className='text-white opacity-50'>PHP</span>
-            </div>
-            <div className='mt-5 flex items-center space-x-14 db1'>
+            </motion.div>
+            <motion.div 
+                    initial={{opacity:0}}
+                    whileInView={{opacity:1}}
+                    transition={{duration:2}}
+            className='mt-5 flex items-center space-x-14 db1'>
               <i className="fa-solid fa-database text-gray-700 sm:text-5xl text-3xl"></i>
               <span className='text-white opacity-50'>My sql</span>
-            </div>
-            <div  className='mt-5 flex items-center space-x-14 db2'> 
+            </motion.div>
+            <motion.div 
+                    initial={{opacity:0}}
+                    whileInView={{opacity:1}}
+                    transition={{duration:2}}
+            className='mt-5 flex items-center space-x-14 db2'> 
               <i className="fa-solid fa-database text-blue-600 sm:text-5xl text-3xl"></i>
               <span className='text-white opacity-50'>Pg Admin</span>
-            </div>
+            </motion.div>
         </CardContent>
       </Card>
         </div>
@@ -108,22 +142,30 @@ export default function Acceuil() {
         <Card variant="outlined" sx={{ backgroundColor: '#1E1E1E' ,borderColor: '#000' }}>
         <CardContent id='project'>
         <p className='bg-neutral-900 shadow w-15 p-1 ps-2 rounded text-xs mb-2 text-white'>project</p>
-        <div className='flex items-center space-x-2 mt-4'>
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className='flex items-center space-x-2 mt-4'>
             <button className='cursor-pointer hover:rotate-60 me-4'
             onClick={()=>window.location.href="https://portfolio-github-kohl.vercel.app/"}><i class="fas fa-link text-blue-500 text-2xl" aria-hidden="true"></i></button>
             <div className='gap-y-0'>
               <span className='text-white opacity-70 font-bold '>Portfolio</span>
               <p className='text-xs text-white opacity-50'>developper avec react+Tailwind</p>
             </div>
-        </div>
-        <div className='flex items-center space-x-2 mt-4'>
+        </motion.div>
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className='flex items-center space-x-2 mt-4'>
             <button className='cursor-pointer hover:rotate-60 me-4'
             onClick={()=>window.location.href=""}><i class="fas fa-link text-gray-600 text-2xl" aria-hidden="true"></i></button> 
             <div className='gap-y-0'>
               <span className='text-white opacity-70 font-bold '><a href="">Vender Free</a></span>
               <p className='text-xs text-white opacity-50'>developper avec react+Tailwind+python</p>
             </div>
-        </div>
+        </motion.div>
         
         </CardContent>
       </Card>
@@ -132,24 +174,36 @@ export default function Acceuil() {
         <CardContent>
         <p className='bg-neutral-900 shadow w-20 p-1 ps-2 rounded text-xs mb-2 text-white'>Contact me</p>
           <div className=''>
-        <div className='card bg-neutral-900 rounded flex w-[215px] h-[40px] gap-4 items-center ps-3 me-5 hover:scale-110 text-white mt-3 text-xs'>
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className='card bg-neutral-900 rounded flex w-[215px] h-[40px] gap-4 items-center ps-3 me-5 hover:scale-110 text-white mt-3 text-xs'>
         <i class="fas fa-envelope #D14836 text-[#D14836]"></i>
         <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mirado0603@gmail.com">mirado0603@gmail.com</a></p>
         <button className='cursor-pointer' 
         onClick={() => window.location.href = "https://mail.google.com/mail/?view=cm&fs=1&to=mirado0603@gmail.com"}> <i class="fas fa-arrow-up rotate-45 text-xl"></i></button>
-        </div> 
-        <div className='card bg-neutral-900 rounded flex w-[215px] h-[40px] gap-4 items-center ps-3 me-5 hover:scale-110 text-white mt-3'>
+        </motion.div> 
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className='card bg-neutral-900 rounded flex w-[215px] h-[40px] gap-4 items-center ps-3 me-5 hover:scale-110 text-white mt-3'>
         <i class="fab fa-facebook-f text-blue-800"></i>
         <p><a className='text-xs' target="_blank"  rel="noopener noreferrer" href="https://www.facebook.com/miii.rakotoson.1?locale=fr_FR">Mi'e Andriah</a></p>
         <button className='cursor-pointer ml-auto'
         onClick={() => window.location.href ="https://www.facebook.com/miii.rakotoson.1?locale=fr_FR"}> <i class="fas fa-arrow-up rotate-45 text-xl  mr-3"></i></button>
-        </div>
-        <div className='card bg-neutral-900 rounded flex w-[215px] h-[40px] gap-4 items-center ps-3 me-5 hover:scale-110 text-white mt-3'>
+        </motion.div>
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className='card bg-neutral-900 rounded flex w-[215px] h-[40px] gap-4 items-center ps-3 me-5 hover:scale-110 text-white mt-3'>
         <i class="fab fa-linkedin-in text-[#0A66C2]"></i>
         <p><a className='text-xs' target="_blank"  rel="noopener noreferrer" href="https://linkedin.com/in/mirado-andriah-7ab856372">Mirado Andriah</a></p>
         <button className='cursor-pointer ml-auto'
         onClick={()=>window.location.href="https://linkedin.com/in/mirado-andriah-7ab856372"}><i class="fas fa-arrow-up rotate-45 text-xl mr-3"></i></button> 
-        </div> 
+        </motion.div> 
       </div> 
           
         </CardContent>
@@ -162,21 +216,33 @@ export default function Acceuil() {
         <h2 className='md:text-3xl text-1xl'>I love working on...</h2>
       </div>
       <div className='flex justify-center mt-5 mb-20 flex-col sm:flex-row md:ms-0 ms-[15px]' id='skills'>
-        <div className=' w-[266px]'>
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className=' w-[266px]'>
           <i class="fab fa-react text-4xl animate-spin mb-2"></i>
           <h4 className='font-bold'>React</h4>
           <p className='me-4'>I enjoy working with React because it allows me to create modern and interactive interfaces</p>
-        </div>
-        <div className=' w-[266px] md:mt-0 mt-5'>
+        </motion.div>
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className=' w-[266px] md:mt-0 mt-5'>
         <SiTailwindcss className="text-blue-500 w-10 h-10 mb-1" />
           <h4 className='font-bold'>Tailwind</h4>
           <p className='me-4'>I enjoy using Tailwind because it allows me to create modern and stylish interfaces very quickly</p>
-        </div>
-        <div className=' w-[266px] md:mt-0 mt-5'>
+        </motion.div>
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className=' w-[266px] md:mt-0 mt-5'>
         <SiPython className="text-yellow-400 w-10 h-10 mb-1" />
           <h4 className='font-bold'>Python</h4>
           <p className='me-4'>I am still learning backend development with Python, but I really enjoy coding and discovering how to create efficient and practical applications.</p>
-        </div>
+        </motion.div>
       </div>
 
       <div className='md:ml-[270px] ml-[20px]'>
@@ -184,33 +250,53 @@ export default function Acceuil() {
         <h2 className='md:text-3xl text-1xl'>I love work with you.</h2>
       </div>
       <div className='flex justify-center mt-5 mb-20 flex-col md:flex-row'>
-        <div className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 md:ms-7 ms-2 hover:scale-110 '>
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 md:ms-7 ms-2 hover:scale-110 '>
         <i class="fas fa-envelope"></i>
         <p><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mirado0603@gmail.com">mirado0603@gmail.com</a></p>
         <div className='cursor-pointer ml-auto me-3' 
         onClick={() => window.location.href = "https://mail.google.com/mail/?view=cm&fs=1&to=mirado0603@gmail.com"}> <i class="fas fa-arrow-up rotate-45 text-xs"></i></div>
-        </div> 
-        <div className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 md:ms-0 ms-2 hover:scale-110 md:mt-0 mt-3'>
+        </motion.div> 
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 md:ms-0 ms-2 hover:scale-110 md:mt-0 mt-3'>
         <i class="fab fa-facebook-f"></i>
         <p><a target="_blank"  rel="noopener noreferrer" href="https://www.facebook.com/miii.rakotoson.1?locale=fr_FR">Mi'e Andriah</a></p>
         <div className='cursor-pointer ml-auto'
         onClick={() => window.location.href ="https://www.facebook.com/miii.rakotoson.1?locale=fr_FR"}> <i class="fas fa-arrow-up rotate-45 text-xs  mr-3"></i> </div>
-        </div>
-        <div className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 hover:scale-110 md:ms-0 ms-2 md:mt-0 mt-3'>
+        </motion.div>
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 hover:scale-110 md:ms-0 ms-2 md:mt-0 mt-3'>
         <i class="fab fa-linkedin-in"></i>
         <p><a target="_blank"  rel="noopener noreferrer" href="https://linkedin.com/in/mirado-andriah-7ab856372">Mirado Andriah</a></p>
         <button className='cursor-pointer ml-auto'
         onClick={()=>window.location.href="https://linkedin.com/in/mirado-andriah-7ab856372"}> <i class="fas fa-arrow-up rotate-45 text-xs  mr-3"></i></button>
-        </div> 
-        <div className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 hover:scale-110 md:ms-0 ms-2 md:mt-0 mt-3'>
+        </motion.div> 
+        <motion.div 
+                initial={{opacity:0}}
+                whileInView={{opacity:1}}
+                transition={{duration:2}}
+        className='card bg-neutral-900 rounded flex w-[265px] h-[60px] gap-4 items-center ps-3 me-5 hover:scale-110 md:ms-0 ms-2 md:mt-0 mt-3'>
         <i class="fab fa-github"></i>
         <p><a target="_blank"  rel="noopener noreferrer" href="https://github.com/MiradoAndriah">Mirado Andriah</a></p>
         <button className='cursor-pointer ml-auto'
         onClick={()=>window.location.href="https://github.com/MiradoAndriah"}> <i class="fas fa-arrow-up rotate-45 text-xs  mr-3"></i></button>
-        </div>
+        </motion.div>
       </div> 
 
-      <footer className='bg-neutral-900 w-full'>
+      <motion.footer 
+              initial={{opacity:0}}
+              whileInView={{opacity:1}}
+              transition={{duration:2}}
+      className='bg-neutral-900 w-full'>
         <div className='flex justify-left xl:ms-65 ms-2 mt-5 flex-col sm:flex-row pb-5 pt-5 md:gap-x-30 xl:gap-x-50 sm:gap-10'>
           <div className='sm:mb-0 mb-5'>
             <p className='mb-2 text-2xl'>Contact</p>
@@ -267,8 +353,8 @@ export default function Acceuil() {
           onClick={() => setLiked(!liked)}
           style={{ cursor: "pointer" }}>
           <span className='text-xs text-white ml-2'>like my portfolio</span></i>
-        <p className='text-xs flex justify-left xl:ms-65 ms-2 mt-5 '>© 2025 Mirado Andrianantenaina - development Web</p>
-      </footer>
+        <p className='text-xs flex justify-left xl:ms-65 ms-2 mt-5 mb-3 '>© 2025 Mirado Andrianantenaina - development Web</p>
+      </motion.footer>
     </>
   )
 }
